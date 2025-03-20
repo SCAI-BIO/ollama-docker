@@ -15,7 +15,7 @@ jobs:
       id: model
       run: echo "MODEL=${GITHUB_REF/refs\/tags\/v/}" >> "$GITHUB_OUTPUT"
     - name: Replace model name in start.sh script
-      run: sed -i "s|ollama pull .*|ollama pull ${{ steps.model.outputs.MODEL }}|" start.sh
+      run: echo "MODEL=$(echo ${GITHUB_REF#refs/tags/v} | sed 's/:/\//g')" >> "$GITHUB_OUTPUT"
     - name: Docker Login
       uses: docker/login-action@v3
       with:
