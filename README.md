@@ -1,5 +1,5 @@
 # ollama-docker
-Pre-build docker containers for different LLMs using Ollama
+Pre-build, ready to use docker containers for different LLMs using Ollama
 
 # Build a new model by Release
 
